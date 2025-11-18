@@ -1,0 +1,19 @@
+{
+  "name": "Finova",
+  "short_name": "Finova",
+  "description": "Buy products and earn daily income with Finova. Turn purchases into smart investments and start earning now.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon/favicon.svg",
+      "sizes": "72x72",
+      "type": "image/svg"
+    }
+    
+   
+]
+}

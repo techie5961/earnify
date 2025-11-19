@@ -9,7 +9,10 @@
         <div class="main-body overflow-auto column g-10 align-center flex-auto w-full pc-x-padding p-10">
             <img src="{{ asset('images/referral.png') }}" class="w-full max-w-500" alt="">
             <span style="font-family:alfa slab" class="desc">Invite Friends To Earn More</span>
-        
+            <strong class="desc c-primary">My Invite Link👇👇</strong>
+        <div class="m-x-auto w-full br-5  justify-center row bg-light h-50 overflow-auto">
+       <span>   {{ url('register/ref/'.Auth::guard('users')->user()->username.'') }}</span>
+        </div>
         <div class="grid w-full pc-grid-2 g-5">
              <div style="border-bottom:2px solid blue;font-family: titan one;font-weight:100;" onclick="copy('{{ url('register/ref/'.Auth::guard('users')->user()->username.'') }}')" class="copy-btn bg-primary max-w-500 pointer primary-text w-full h-50 clip-5 bg-white">
            <div class="row overflow-hidden det align-center justify-center no-select p-10 w-full h-full clip-5 br-5">

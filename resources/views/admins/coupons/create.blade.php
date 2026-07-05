@@ -42,7 +42,7 @@
                 <div class="cont">
                     <select name="package" class="inp input required">
                         <option value="" selected disabled>Click to select....</option>
-                      @if ($packages->isEmpty())
+                      @if (empty($packages))
                           <option value="" disabled>No Package available</option>
                       @else
                             @foreach ($packages as $package)

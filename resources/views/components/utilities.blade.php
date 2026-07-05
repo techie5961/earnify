@@ -3,11 +3,11 @@
      <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="apple-mobile-web-app-title" content="ProfitPort" />
+<meta name="apple-mobile-web-app-title" content="{{ config('app.name') }}" />
 <meta name="format-detection" content="telephone=no">
 
-<meta property="og:title" content="{{ config('app.name') }} - Earn Cash with Daily Tasks & Gift Codes" />
-<meta property="og:description" content="Complete daily tasks, spin to win cash, and redeem gift codes from our WhatsApp & Telegram groups. Welcome bonus inside!" />
+<meta property="og:title" content="{{ config('app.name') }} - Earnify helps users earn cash from daily tasks, gift codes, games, agent rewards and free loans while accessing training, wallet services and trusted support on a secure earning platform." />
+<meta property="og:description" content="Complete daily tasks,play games,browse and earn,get free loans and more!" />
 <meta property="og:image" content="{{ asset(config('settings.logo')) }}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -17,8 +17,8 @@
 
 <!-- Twitter Card (optional but recommended) -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="{{ config('app.name') }} - Earn Cash with Daily Tasks & Gift Codes" />
-<meta name="twitter:description" content="Daily tasks, spin to win, and gift code redemptions. Join now!" />
+<meta name="twitter:title" content="{{ config('app.name') }} - Earnify helps users earn cash from daily tasks,daily browsing, games, agent rewards and free loans while accessing training, wallet services and trusted support on a secure earning platform." />
+<meta name="twitter:description" content="Complete daily tasks,play games,browse and earn,get free loans and more!" />
 <meta name="twitter:image" content="{{ asset(config('settings.logo')) }}" />
 
 @endisset

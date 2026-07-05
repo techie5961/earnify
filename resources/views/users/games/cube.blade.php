@@ -808,7 +808,7 @@
             if (show) {
               var betAmount = 10;
               
-              modal.show(
+              modal.show
                 '<p>Get ready to solve the cube!</p>' +
                 '<p>You have <span class="highlight">' + CountdownTimer.formatTime(CONFIG.defaultTime) + '</span> to solve it.</p>' +
                 '<p>Bet amount: <span class="highlight">$' + betAmount + '</span></p>' +

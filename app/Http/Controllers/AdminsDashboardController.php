@@ -443,7 +443,6 @@ public function PackagesList(){
 
 // create coupon code
 public function CreateCouponCode(){
-    return collect(json_decode(file_get_contents(database_path('data/packages.json'))))->all();
     $vendors=DB::table('users')->where('type','vendor')->get();
     return view('admins.coupons.create',[
         'vendors' => $vendors,

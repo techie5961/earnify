@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Earnify | Monetize Your Daily Activities</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    /* ===== EARNIFY CSS VARIABLES ===== */
+    :root {
+      --color-primary: #0a5c27;
+      --color-primary-dark: #06441b;
+      --color-primary-light: #0e7a35;
+      --color-accent: #21ff85;
+      --color-accent-soft: #6effb5;
+      --color-accent-dark: #0fa751;
+      --color-secondary: #e86e18;
+      --color-secondary-dark: #e05f0a;
+      --color-secondary-light: #ff8c3a;
+      --color-gold: #e3ab4a;
+      --color-gold-dark: #b38e46;
+      --color-gold-light: #f5c773;
+      --color-text-primary: #f1f5f9;
+      --color-text-secondary: #b9c7d9;
+      --color-bg-main: #03060a;
+      --color-bg-overlay: rgba(0, 0, 0, 0.85);
+      --color-bg-glow: rgba(33, 255, 133, 0.08);
+      --glow-green: 0 0 18px rgba(33, 255, 133, 0.5);
+      --glow-orange: 0 0 14px rgba(232, 110, 24, 0.6);
+      --gradient-accent: linear-gradient(135deg, #e86e18, #ff8c3a);
+      --gradient-gold: linear-gradient(135deg, #b38e46, #e3ab4a);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #03060a;
+      color: #f0f3f8;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* Anton Font for Headings */
+    h1, h2, h3, h4, .logo, .price, .stat-number, .btn, .hero-badge, .price-card h3, .feat-item h4, .menu0heading, .card-heading {
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 0.02em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    /* Typography */
+    h1 {
+      font-size: 4.2rem;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(130deg, #ffffff, var(--color-accent), var(--color-secondary-light));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    .text-gradient {
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gradient-accent);
+      color: #03060a;
+      font-weight: 400;
+      padding: 14px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: 0.25s ease;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+    .btn:hover {
+      background: linear-gradient(105deg, var(--color-secondary-light), var(--color-secondary));
+      transform: translateY(-3px);
+      box-shadow: var(--glow-orange);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--color-accent);
+      color: var(--color-accent);
+    }
+    .btn-outline:hover {
+      background: var(--color-accent);
+      color: #030c08;
+    }
+
+    /* Navbar (SPYLT exact style) */
+    .navigation-menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: rgba(3, 6, 10, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .logo {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #fff, var(--color-accent), var(--color-gold));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .nav-links a:hover {
+      color: var(--color-accent);
+    }
+
+    /* Hero Section (SPYLT style) */
+    .hero-section {
+      padding-top: 140px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      background: rgba(33,255,133,0.08);
+      backdrop-filter: blur(8px);
+      padding: 8px 18px;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--color-accent);
+      margin-bottom: 24px;
+      border: 0.5px solid rgba(33,255,133,0.3);
+      font-family: 'Anton', sans-serif;
+    }
+    .hero-highlight {
+      color: var(--color-secondary);
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      color: var(--color-accent);
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Features Grid (SPYLT card style) */
+    .features-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 40px 0;
+    }
+    .feat-item {
+      background: rgba(5, 15, 18, 0.7);
+      backdrop-filter: blur(5px);
+      border-radius: 32px;
+      padding: 32px 24px;
+      transition: 0.2s;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .feat-item:hover {
+      border-color: rgba(232,110,24,0.3);
+      transform: translateY(-4px);
+    }
+    .feat-item i {
+      font-size: 2.4rem;
+      color: var(--color-secondary);
+      margin-bottom: 18px;
+    }
+    .feat-item h4 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .feat-item p {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
+
+    /* Pricing Cards (SPYLT card style) */
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .price-card {
+      background: #0e171f;
+      backdrop-filter: blur(4px);
+      border-radius: 36px;
+      padding: 30px 26px;
+      width: 310px;
+      transition: 0.25s;
+      border: 1px solid rgba(33,255,133,0.12);
+    }
+    .price-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--color-accent);
+    }
+    .price-card h3 {
+      font-size: 2rem;
+    }
+    .price {
+      font-size: 2.5rem;
+      color: var(--color-secondary);
+      margin: 18px 0;
+      font-family: 'Anton', sans-serif;
+    }
+    .feature-list {
+      list-style: none;
+      margin: 22px 0;
+    }
+    .feature-list li {
+      margin: 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+    }
+    .feature-list i {
+      color: var(--color-accent);
+      width: 24px;
+    }
+
+    /* Agent Banner (SPYLT style) */
+    .agent-banner {
+      background: linear-gradient(95deg, #07140f, #030b07);
+      border-radius: 60px;
+      padding: 22px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 35px 0;
+      border-left: 6px solid var(--color-accent);
+    }
+    .agent-banner span {
+      color: var(--color-secondary);
+      font-weight: 800;
+    }
+
+    /* Follower Section */
+    .follower-section {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 48px;
+      padding: 40px 32px;
+      backdrop-filter: blur(10px);
+    }
+    .follower-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    .follower-card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 22px;
+      border-radius: 32px;
+      min-width: 160px;
+      flex: 1;
+      text-align: center;
+      border: 0.5px solid rgba(33,255,133,0.2);
+      transition: 0.2s;
+    }
+    .follower-card:hover {
+      border-color: var(--color-secondary);
+    }
+    .follower-card i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--color-accent);
+    }
+    .follower-card strong {
+      font-family: 'Anton', sans-serif;
+      font-size: 1.2rem;
+    }
+
+    /* FAQ Grid */
+    .faq-grid {
+      display: grid;
+      gap: 20px;
+      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    .faq-q {
+      background: #0c121c;
+      border-radius: 32px;
+      padding: 22px 28px;
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+    .faq-q strong {
+      color: var(--color-secondary);
+      font-family: 'Anton', sans-serif;
+    }
+
+    /* Loan Badge */
+    .loan-badge {
+      background: linear-gradient(115deg, #1e2a1f, #0b1912);
+      padding: 14px 24px;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .highlight-box {
+      background: rgba(232, 110, 24, 0.12);
+      border-radius: 28px;
+      padding: 28px;
+      margin: 30px 0;
+      border: 1px solid rgba(232, 110, 24, 0.25);
+      text-align: center;
+    }
+    .money-text {
+      font-size: 2rem;
+      color: var(--color-gold);
+      font-family: 'Anton', sans-serif;
+    }
+
+    /* Footer (SPYLT style) */
+    .footer {
+      border-top: 1px solid rgba(33,255,133,0.2);
+      padding: 50px 0;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      h3 { font-size: 1.4rem; }
+      section { padding: 60px 0; }
+      .navbar { flex-direction: column; }
+      .nav-links { justify-content: center; gap: 20px; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Scrollbar Hidden */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Menu (EXACT SPYLT STRUCTURE) -->
+<div data-wf--navigation-menu--variant="base" class="navigation-menu">
+  <div class="navbar">
+    <a href="#" class="logo" style="text-decoration: none;">
+      <i class="fas fa-crown" style="color: var(--color-accent); font-size: 28px;"></i> 
+      <span class="logo-text">EARNIFY</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Membership</a>
+      <a href="#earnways">Earn Ways</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="btn" style="padding: 8px 26px;">Join Now →</a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- Hero Section (EXACT SPYLT STRUCTURE) -->
+  <div x- class="hero-section">
+    <div x-data="{ 
+      if($store.storeName){
+        
+      }
+     }" class="container">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-globe-africa"></i> MONETIZE YOUR DAILY ACTIVITIES</div>
+        <h1>EARN <span class="hero-highlight">N100K - N200K WEEKLY</span><br><span style="color: var(--color-accent);">CREATOR, DRIVER OR ARTIST</span></h1>
+        <p style="font-size: 1.2rem; opacity: 0.85;">Earnify transforms your daily activities into money. It's not just activities, It's money.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-number">₦0 MIN</span><br>Withdrawal</div>
+          <div class="stat"><span class="stat-number">24/7</span><br>Instant Payouts</div>
+          <div class="stat"><span class="stat-number">8+</span><br>Income Streams</div>
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="btn"><i class="fas fa-bolt"></i> JOIN EARNIFY NOW</a>
+          <a href="#" class="btn btn-outline"><i class="fas fa-chart-line"></i> VIEW DASHBOARD</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google to Earn Banner -->
+  <div class="container">
+    <div class="agent-banner">
+      <p><i class="fab fa-google"></i> <strong>GOOGLE EARNIFY AND EARN N50K - N100K DAILY!</strong> | Each Google search pays you N2,000</p>
+      <span><i class="fas fa-headset"></i> 24/7 SUPPORT + WEEKLY SALARY</span>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section id="features">
+    <div class="container">
+      <h2><i class="fas fa-skull-crossbones"></i> UNIQUE EARNIFY FEATURES</h2>
+      <p style="color: var(--color-text-secondary); margin-bottom: 40px; font-size: 1.1rem;">Below are the features that make Earnify exceptional from other platforms</p>
+      <div class="features-showcase">
+        <div class="feat-item"><i class="fas fa-headset"></i><h4>24/7 SUPPORT</h4><p>Around-the-clock customer support every day of the week.</p></div>
+        <div class="feat-item"><i class="fas fa-bolt"></i><h4>INSTANT PAYOUTS</h4><p>24/7 withdrawals with no minimum amount — your money, anytime.</p></div>
+        <div class="feat-item"><i class="fas fa-users"></i><h4>AGENT REWARDS</h4><p>Referral system rewarding users who bring others to the platform.</p></div>
+        <div class="feat-item"><i class="fas fa-tasks"></i><h4>DAILY ACTIVITIES</h4><p>Complete daily tasks to accumulate earnings consistently.</p></div>
+        <div class="feat-item"><i class="fab fa-google"></i><h4>GOOGLE TO EARN</h4><p>Each Google search pays you N2K — turn everyday searches into income.</p></div>
+        <div class="feat-item"><i class="fas fa-laptop-code"></i><h4>FREE COMPUTER TRAINING</h4><p>Digital skills and computer literacy training for all members.</p></div>
+        <div class="feat-item"><i class="fas fa-gift-card"></i><h4>GIFT CARD TRADING</h4><p>Built-in functionality to trade and exchange gift cards securely.</p></div>
+        <div class="feat-item"><i class="fas fa-graduation-cap"></i><h4>FREE SCHOLARSHIP</h4><p>Academic and educational financial assistance opportunities.</p></div>
+        <div class="feat-item"><i class="fas fa-chart-line"></i><h4>WEEKLY SALARY</h4><p>Steady weekly payout schedule for active participants.</p></div>
+        <div class="feat-item"><i class="fas fa-tachometer-alt"></i><h4>INTERACTIVE DASHBOARD</h4><p>Centralized interface to monitor tasks, earnings, and stats.</p></div>
+        <div class="feat-item"><i class="fas fa-rocket"></i><h4>YOUTH EMPOWERMENT</h4><p>Building self-reliance and success skills for young adults.</p></div>
+        <div class="feat-item"><i class="fas fa-chart-simple"></i><h4>FREE SOCIAL MEDIA BOOSTING</h4><p>Tools to increase visibility and engagement on social networks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <div class="container">
+      <h2>⚡ 8 FIGURES MEMBERSHIP PRICING</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>AGENT GOLD</h3>
+          <div class="price">₦14,000</div>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Activation + Free Bonus ₦14k</li>
+            <li><i class="fas fa-hand-holding-usd"></i> Free Loan ₦500,000</li>
+            <li><i class="fas fa-trophy"></i> Killer Bean Reward ₦10k</li>
+            <li><i class="fas fa-chart-line"></i> Followers ₦30k | Google Earn ₦50k</li>
+            <li><i class="fas fa-calendar"></i> Weekly Allowance ₦150k</li>
+            <li><i class="fas fa-chart-simple"></i> Daily Activities ₦100k</li>
+          </ul>
+          <div class="agent-banner" style="margin-top: 12px; padding: 8px 12px;">Min approval 24k (Wed/Sun)</div>
+        </div>
+        <div class="price-card">
+          <h3>AGENT SILVER</h3>
+          <div class="price">₦14,000</div>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Activation + Free Bonus ₦14k</li>
+            <li><i class="fas fa-hand-holding-usd"></i> Free Loan ₦500,000</li>
+            <li><i class="fas fa-trophy"></i> Killer Bean Reward ₦10k</li>
+            <li><i class="fas fa-chart-line"></i> Followers ₦30k | Google Earn ₦50k</li>
+            <li><i class="fas fa-calendar-week"></i> Weekly Support ₦40k + Collab $50</li>
+            <li><i class="fas fa-chart-simple"></i> Daily Activities ₦100k</li>
+          </ul>
+          <div class="agent-banner" style="margin-top: 12px; padding: 8px 12px;">Min approval 24k (Wed/Sun)</div>
+        </div>
+        <div class="price-card">
+          <h3>🇨🇲 CAMEROON PRO</h3>
+          <div class="price">5,800 XAF</div>
+          <ul class="feature-list">
+            <li><i class="fas fa-check"></i> Activation + Bonus 5800xaf</li>
+            <li><i class="fas fa-landmark"></i> Free Loan 200K XAF</li>
+            <li><i class="fas fa-crown"></i> Agent Rewards 5000xaf</li>
+            <li><i class="fas fa-database"></i> Google to earn 20700xaf</li>
+            <li><i class="fas fa-chart-simple"></i> Daily Activities 41300xaf</li>
+            <li><i class="fas fa-calendar-week"></i> Weekly Support 16500xaf</li>
+          </ul>
+          <div>✅ Min approval 9800xaf (Wed/Sun)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Following Collaboration & Free Loan -->
+  <section id="earnways">
+    <div class="container">
+      <div class="follower-section">
+        <h3 style="font-size: 2rem;"><i class="fab fa-tiktok"></i> FOLLOWING COLLABORATION</h3>
+        <p style="margin-bottom: 20px;">Follow top Nigerian and American celebrities — earn rewards per social media follow!</p>
+        <div class="follower-grid">
+          <div class="follower-card"><i class="fab fa-instagram"></i><br><strong>INSTAGRAM</strong><br>$2.50 per follow</div>
+          <div class="follower-card"><i class="fab fa-facebook-f"></i><br><strong>FACEBOOK</strong><br>$2.70 per follow</div>
+          <div class="follower-card"><i class="fab fa-tiktok"></i><br><strong>TIKTOK</strong><br>$2.90 per follow</div>
+          <div class="follower-card"><i class="fas fa-music"></i><br><strong>AUDIOMACK</strong><br>$3.10 per follow</div>
+          <div class="follower-card"><i class="fab fa-spotify"></i><br><strong>SPOTIFY</strong><br>$3.30 per follow</div>
+        </div>
+        <p style="margin-top: 28px; text-align: center; font-weight: 700;">NO CELEBRITIES NO VIBES | NO EARNIFY NO MONEY</p>
+      </div>
+
+      <!-- Free Loan Highlight -->
+      <div class="highlight-box">
+        <i class="fas fa-hand-holding-heart" style="font-size: 3rem; color: var(--color-gold);"></i>
+        <h3 style="margin: 16px 0;">💸 EARNIFY FREE LOAN FEATURE</h3>
+        <p style="font-size: 1.2rem;">We give out free <strong class="money-text">₦500,000</strong> instant loan to all our users</p>
+        <p>No interest rates — just as an appreciation for joining us.</p>
+        <div class="loan-badge" style="margin-top: 24px;"><i class="fas fa-check-circle"></i> INTEREST-FREE • INSTANT APPROVAL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <div class="container">
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; background: #050b0e; border-radius: 48px; padding: 38px; margin-bottom: 50px; border: 0.5px solid rgba(33,255,133,0.1);">
+      <div style="flex:1"><i class="fas fa-brain" style="font-size: 2.8rem; color: var(--color-accent);"></i>
+        <h3>LEARN SMARTER • GROW FASTER</h3>
+        <p style="color: var(--color-text-secondary);">Free computer training, real‑world projects, global certifications.</p>
+      </div>
+      <div style="flex:1"><i class="fas fa-hand-fist" style="font-size: 2.8rem; color: var(--color-secondary);"></i>
+        <h3>FIGHTING POVERTY</h3>
+        <p style="color: var(--color-text-secondary);">Earnify is on a mission to fight poverty and secure futures.</p>
+      </div>
+      <div style="flex:1"><i class="fas fa-briefcase" style="font-size: 2.8rem; color: var(--color-gold);"></i>
+        <h3>FLEXIBLE JOBS</h3>
+        <p style="color: var(--color-text-secondary);">Part-time opportunities that align with student schedules.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <section id="faq">
+    <div class="container">
+      <h2><i class="fas fa-moon"></i> FREQUENTLY ASKED QUESTIONS</h2>
+      <div class="faq-grid">
+        <div class="faq-q"><strong>❓ Do I need to refer people?</strong><br><span style="color:var(--color-accent);">No! Referral is completely optional.</span></div>
+        <div class="faq-q"><strong>❓ Do I need a foreign bank account?</strong><br><span style="color:var(--color-accent);">No — local withdrawals supported 24/7.</span></div>
+        <div class="faq-q"><strong>❓ How does withdrawal work?</strong><br><span style="color:var(--color-accent);">24/7 withdrawal — any amount, anytime.</span></div>
+        <div class="faq-q"><strong>❓ Is there a minimum withdrawal?</strong><br><span style="color:var(--color-accent);">No minimum! Withdraw any amount 24/7.</span></div>
+        <div class="faq-q"><strong>❓ Are there fees besides registration?</strong><br><span style="color:var(--color-accent);">No — one-time activation fee only.</span></div>
+        <div class="faq-q"><strong>❓ Can I get a refund?</strong><br><span style="color:var(--color-accent);">Yes! Full refund available if you stop.</span></div>
+      </div>
+      
+      <!-- Killer Bean Game Section -->
+      <div style="margin-top: 48px; background: rgba(232,110,24,0.08); border-radius: 44px; padding: 32px; text-align: center;">
+        <i class="fas fa-gamepad" style="font-size: 3rem; color: var(--color-secondary);"></i>
+        <h3 style="margin: 16px 0;">INTRODUCING EARNIFY KILLER BEAN</h3>
+        <p style="font-size: 1.2rem;">Win Over <strong class="money-text">N10K - N20K</strong> just by playing!</p>
+        <p>Join the excitement with our killer bean feature where you can enjoy your favorite childhood board game and earn real money.</p>
+        <div class="loan-badge" style="margin-top: 20px;"><i class="fas fa-trophy"></i> IT'S NOT JUST ABOUT FINANCE — IT'S FUN TOO!</div>
+      </div>
+
+      <div style="margin-top: 48px; text-align: center;">
+        <a href="#" class="btn"><i class="fas fa-ticket-alt"></i> JOIN EARNIFY NOW — START EARNING TODAY</a>
+        <p style="margin-top: 22px; font-size: 0.85rem;">🌍 NIGERIA • CAMEROON • GHANA • KENYA • WORLDWIDE</p>
+        <p style="margin-top: 16px; font-size: 0.85rem; color: var(--color-gold);">WEDNESDAYS AND SUNDAYS ALL NATIONALS (MINIMUM APPROVAL 24K / 9800XAF)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (SPYLT style) -->
+  <footer class="footer">
+    <div class="container">
+      <p><i class="fas fa-crown"></i> EARNIFY — MONETIZE YOUR DAILY ACTIVITIES</p>
+      <div style="margin: 28px 0; display: flex; justify-content: center; gap: 35px; flex-wrap: wrap;">
+        <span><i class="fab fa-telegram"></i> Telegram Support</span>
+        <span><i class="fas fa-dollar-sign"></i> Any currency accepted</span>
+        <span><i class="fas fa-gamepad"></i> Killer Bean Game</span>
+        <span><i class="fas fa-chart-line"></i> Interactive Dashboard</span>
+      </div>
+      <p style="font-size: 0.75rem; opacity: 0.65;">© 2025 EARNIFY — REVOLUTIONIZING FLEXIBLE JOBS FOR STUDENTS & ADULTS</p>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === "#" || href === "#top") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

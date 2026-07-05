@@ -1,0 +1,344 @@
+[
+  {
+    "id": "1",
+    "name": {
+      "value": "Premium",
+      "is_number": false,
+      "currency": null
+    },
+    "country": {
+      "value": "nigeria",
+      "is_number": false,
+      "currency": null
+    },
+    "activation_fee": {
+      "value": 8500,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "earnify_free_bonus": {
+      "value": 8500,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "earnify_agent_rewards": {
+      "value": 7000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "agent_gold": {
+      "value": 200,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "agent_silver": {
+      "value": 100,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "free_loan": {
+      "value": 200000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "weekly_support": {
+      "value": 20000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "killer_bean_reward": {
+      "value": 5000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "followers": {
+      "value": "10000-20000",
+      "is_number": false,
+      "currency": "NGN"
+    },
+    "earnify_google_to_earn": {
+      "value": 25000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "daily_activities": {
+      "value": 50000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "following_collab_usd": {
+      "value": 20,
+      "is_number": true,
+      "currency": "USD"
+    },
+    "earnify_weekly_allowance": {
+      "value": 100000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "agent_notification_days": {
+      "value": "Wednesday,Sunday",
+      "is_number": false,
+      "currency": null
+    },
+    "minimum_approval": {
+      "value": 14000,
+      "is_number": true,
+      "currency": "NGN"
+    }
+  },
+  {
+    "id": "2",
+    "name": {
+      "value": "8 Figures",
+      "is_number": false,
+      "currency": null
+    },
+    "country": {
+      "value": "nigeria",
+      "is_number": false,
+      "currency": null
+    },
+    "activation_fee": {
+      "value": 14000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "earnify_free_bonus": {
+      "value": 14000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "earnify_agent_rewards": {
+      "value": 12000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "agent_gold": {
+      "value": 300,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "agent_silver": {
+      "value": 200,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "free_loan": {
+      "value": 500000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "weekly_support": {
+      "value": 40000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "killer_bean_reward": {
+      "value": 10000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "followers": {
+      "value": "10000-30000",
+      "is_number": false,
+      "currency": "NGN"
+    },
+    "earnify_google_to_earn": {
+      "value": 50000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "daily_activities": {
+      "value": 100000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "following_collab_usd": {
+      "value": 50,
+      "is_number": true,
+      "currency": "USD"
+    },
+    "earnify_weekly_allowance": {
+      "value": 150000,
+      "is_number": true,
+      "currency": "NGN"
+    },
+    "agent_notification_days": {
+      "value": "Wednesday,Sunday",
+      "is_number": false,
+      "currency": null
+    },
+    "minimum_approval": {
+      "value": 24000,
+      "is_number": true,
+      "currency": "NGN"
+    }
+  },
+  {
+    "id": "3",
+    "name": {
+      "value": "8 Figures",
+      "is_number": false,
+      "currency": null
+    },
+    "country": {
+      "value": "cameroon",
+      "is_number": false,
+      "currency": null
+    },
+    "activation_fee": {
+      "value": 5800,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "earnify_free_bonus": {
+      "value": 5800,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "earnify_agent_rewards": {
+      "value": 5000,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "agent_gold_silver": {
+      "value": 200,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "free_loan": {
+      "value": 200000,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "weekly_support": {
+      "value": 16500,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "killer_bean_reward": {
+      "value": 4150,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "followers": {
+      "value": "4000-12400",
+      "is_number": false,
+      "currency": "XAF"
+    },
+    "earnify_google_to_earn": {
+      "value": 20700,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "daily_activities": {
+      "value": 41300,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "following_collab_usd": {
+      "value": 50,
+      "is_number": true,
+      "currency": "USD"
+    },
+    "earnify_weekly_allowance": {
+      "value": 61900,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "agent_notification_days": {
+      "value": "Wednesday,Sunday",
+      "is_number": false,
+      "currency": null
+    },
+    "minimum_approval": {
+      "value": 9800,
+      "is_number": true,
+      "currency": "XAF"
+    }
+  },
+  {
+    "id": "4",
+    "name": {
+      "value": "Premium",
+      "is_number": false,
+      "currency": null
+    },
+    "country": {
+      "value": "cameroon",
+      "is_number": false,
+      "currency": null
+    },
+    "activation_fee": {
+      "value": 3500,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "earnify_free_bonus": {
+      "value": 3500,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "earnify_agent_rewards": {
+      "value": 2900,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "agent_gold_silver": {
+      "value": 125,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "free_loan": {
+      "value": 80000,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "weekly_support": {
+      "value": 8200,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "killer_bean_reward": {
+      "value": 2000,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "followers": {
+      "value": "40000-80000",
+      "is_number": false,
+      "currency": "XAF"
+    },
+    "earnify_google_to_earn": {
+      "value": 10200,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "daily_activities": {
+      "value": 20400,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "following_collab_usd": {
+      "value": 20,
+      "is_number": true,
+      "currency": "USD"
+    },
+    "earnify_weekly_allowance": {
+      "value": 80000,
+      "is_number": true,
+      "currency": "XAF"
+    },
+    "agent_notification_days": {
+      "value": "Wednesday,Sunday",
+      "is_number": false,
+      "currency": null
+    },
+    "minimum_approval": {
+      "value": 5700,
+      "is_number": true,
+      "currency": "XAF"
+    }
+  }
+]

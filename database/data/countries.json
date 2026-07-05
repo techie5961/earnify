@@ -1,0 +1,31 @@
+[
+  {
+    "name": "nigeria",
+    "official_name": "Federal Republic of Nigeria",
+    "capital": "Abuja",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 218541212,
+    "area": 923768,
+    "currency": "₦",
+    "languages": {
+      "en": "English"
+    },
+    "flag": "🇳🇬"
+  },
+  {
+    "name": "cameroon",
+    "official_name": "Republic of Cameroon",
+    "capital": "Yaoundé",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 27914536,
+    "area": 475442,
+     "currency": "XAF",
+    "languages": {
+      "en": "English",
+      "fr": "French"
+    },
+    "flag": "🇨🇲"
+  }
+]

@@ -1,0 +1,54 @@
+@extends('layout.admins.app')
+@section('title')
+    Create Voucher
+@endsection
+@section('main')
+    <section x-data="{  }" class="w-full column g-10px">
+        <form x-on:submit.prevent="PostRequest(event,$el,function(response){
+            let data=JSON.parse(response);
+            if(data.status == 'success'){
+                window.location.href='{{ url('admins/vouchers/manage') }}';
+            }
+        })" method="POST" action="{{ url('admins/post/edit/voucher/process') }}" class="w-full column g-10px bg-light p-20px br-10px border-width-1px border-color-rgt-01 border-style-solid">
+           {{-- csrf token --}}
+           <input type="hidden" autocomplete="off" name="_token" value="{{ @csrf_token() }}" class="inp input required">
+          {{-- voucher id --}}
+          <input type="hidden" class="inp input" name="id" value="{{ $voucher->id }}">
+           {{-- new row --}}
+            <div class="row c-primary w-full align-center g-10px">
+                <i class="row h-fit">
+                    <svg viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M2.00488 9.49966V3.99966C2.00488 3.44738 2.4526 2.99966 3.00488 2.99966H21.0049C21.5572 2.99966 22.0049 3.44738 22.0049 3.99966V9.49966C20.6242 9.49966 19.5049 10.619 19.5049 11.9997C19.5049 13.3804 20.6242 14.4997 22.0049 14.4997V19.9997C22.0049 20.5519 21.5572 20.9997 21.0049 20.9997H3.00488C2.4526 20.9997 2.00488 20.5519 2.00488 19.9997V14.4997C3.38559 14.4997 4.50488 13.3804 4.50488 11.9997C4.50488 10.619 3.38559 9.49966 2.00488 9.49966ZM9.00488 8.99966V10.9997H15.0049V8.99966H9.00488ZM9.00488 12.9997V14.9997H15.0049V12.9997H9.00488Z"></path></svg>
+
+                </i>
+                <strong class="desc font-weight-900 c-primary no-select">Edit Voucher</strong>
+            </div>
+            <div class="hr" vitecss-type="dashed"></div>
+            {{-- new input --}}
+            <div class="w-full column g-5px">
+                 <div class="column g-2px">
+                 <label>Voucher Title</label>
+                <small class="opacity-07">The purpose of this voucher.</small>
+             
+               </div>
+                <div class="cont">
+                    <select name="purpose" class="inp input required">
+                        <option value=""disabled>Click to select...</option>
+                        <option selected value="games_voucher">Games Voucher</option>
+                    </select>
+                </div>
+            </div>
+             {{-- new input --}}
+            <div class="w-full column g-5px">
+               <div class="column g-2px">
+                 <label>Voucher Value</label>
+                <small class="opacity-07">The amount the user would receive after redeeming the voucher.</small>
+             
+               </div>
+                <div class="cont">
+                 <input value="{{ $voucher->value }}" name="value" type="number" inputmode="numeric" placeholder="Enter voucher value" class="inp input required">
+                </div>
+            </div>
+            <button class="post">Save Changes</button>
+        </form>
+    </section>
+@endsection

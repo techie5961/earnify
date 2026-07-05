@@ -1,0 +1,20 @@
+[
+    {
+        "key" : "main_balance",
+        "name" : "Weekly Allowance",
+        "class" : "general"
+    
+    },
+     {
+        "key" : "affiliate_balance",
+        "name" : "Agent Rewards",
+        "class" : "general"
+    
+    },
+    {
+        "key" : "gaming_balance",
+        "name" : "Gaming Wallet",
+        "class" : "general"
+    
+    }
+]

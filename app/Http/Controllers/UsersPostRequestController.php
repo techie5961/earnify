@@ -173,8 +173,8 @@ class UsersPostRequestController extends Controller
             ]);
 
 
-    if(request()->has('ref') && DB::table('users')->where('uniqid',request('ref'))->where('country',$country)->where('status','active')->exists()){
-        $agent=DB::table('users')->where('uniqid',request('ref'))->first();
+    if(request()->has('ref') && DB::table('users')->where('username',request('ref'))->where('country',$country)->where('status','active')->exists()){
+        $agent=DB::table('users')->where('username',request('ref'))->first();
         $agent_reward=$package->earnify_agent_rewards->value;
         DB::table('users')->where('id',$agent->id)->increment('affiliate_balance',$agent_reward);
           DB::table('transactions')->insert([

@@ -240,24 +240,14 @@
              {{-- new column --}}
             <div x-data="{ 
                 'link' : '{{ url('users/games') }}'
-             }" x-on:click="Redirect(link)"  class="column align-center text-center g-5">
+             }" x-on:click="CreateNotify('info','Gaming portal is currently closed, check back later')"  class="column align-center text-center g-5">
                 <div class="h-50 no-shrink w-fit perfect-square g-10 column align-center justify-center br-10 bg-primary primary-text">
 <svg viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M17 4C20.3137 4 23 6.68629 23 10V14C23 17.3137 20.3137 20 17 20H7C3.68629 20 1 17.3137 1 14V10C1 6.68629 3.68629 4 7 4H17ZM10 9H8V11H6V13H7.999L8 15H10L9.999 13H12V11H10V9ZM18 13H16V15H18V13ZM16 9H14V11H16V9Z"></path></svg>
 
                 </div>
                 <small class="opacity-07">Games</small>
             </div>
-              {{-- new column --}}
-            <div x-data="{ 
-                'link' : '{{ url('users/games') }}'
-             }" x-on:click="Redirect(l
-             ink)"  class="column align-center text-center g-5">
-                <div class="h-50 no-shrink w-fit perfect-square g-10 column align-center justify-center br-10 bg-primary primary-text">
-<svg viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M17 4C20.3137 4 23 6.68629 23 10V14C23 17.3137 20.3137 20 17 20H7C3.68629 20 1 17.3137 1 14V10C1 6.68629 3.68629 4 7 4H17ZM10 9H8V11H6V13H7.999L8 15H10L9.999 13H12V11H10V9ZM18 13H16V15H18V13ZM16 9H14V11H16V9Z"></path></svg>
-
-                </div>
-                <small class="opacity-07">Free Loan</small>
-            </div>
+             
               {{-- new column --}}
             <div x-data="{ 
                 'link' : '{{ url('users/google/to/earn') }}'
@@ -286,9 +276,9 @@
             {{-- new row --}}
             <div class="row w-full overflow-hidden g-10 align-center space-between">
                 <div style="border:1px solid var(--rgt-01);flex:1 0 auto;max-width:calc(100% - 50px);" class="h-40 overflow-hidden max-w-full p-10 row no-shrink br-10">
-                    <span class="row max-w-full overflow-auto no-scrollbar">{{ url('register?ref='.Auth::guard('users')->user()->uniqid.'') }}</span>
+                    <span class="row max-w-full overflow-auto no-scrollbar">{{ url('register?ref='.Auth::guard('users')->user()->username.'') }}</span>
                 </div>
-                <div onclick="copy('{{ url('register?ref='.Auth::guard('users')->user()->uniqid.'') }}')" class="h-40 w-40 no-shrink bg-primary primary-text column align-center justify-center br-10">
+                <div onclick="copy('{{ url('register?ref='.Auth::guard('users')->user()->username.'') }}')" class="h-40 w-40 no-shrink bg-primary primary-text column align-center justify-center br-10">
                     <svg viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z"></path></svg>
 
                 </div>

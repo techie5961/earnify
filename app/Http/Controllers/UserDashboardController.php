@@ -323,7 +323,7 @@ public function TopEarners(){
     $top_earners=DB::table('transactions')->select('user_id','type',DB::raw('SUM(amount) as total_earnings'))->where('type','referral_commission')->where('status','success')->having('total_earnings','>',0)->groupBy('user_id','type')->limit(100)->orderBy('total_earnings','desc')->get();
     $top_earners->transform(function($each){
         $each->user=DB::table('users')->where('id',$each->user_id)->first();
-        $each->total_earnings=Number::abbreviate($each->total_earnings);
+        $each->total_earnings=abbreviate_number($each->total_earnings);
         return $each;
     });
     return view('users.topearners',[

@@ -1,6 +1,37 @@
 <?php
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+
+if (!function_exists('abbreviate_number')) {
+    function abbreviate_number($number, $precision = 1)
+    {
+        if (!is_numeric($number)) {
+            return $number;
+        }
+
+        $number = (float) $number;
+
+        if ($number < 1000) {
+            return rtrim(rtrim(number_format($number, $precision), '0'), '.');
+        }
+
+        $units = [
+            'K' => 1000,
+            'M' => 1000000,
+            'B' => 1000000000,
+            'T' => 1000000000000,
+            'Q' => 1000000000000000,
+        ];
+
+        foreach (array_reverse($units, true) as $suffix => $value) {
+            if ($number >= $value) {
+                return rtrim(rtrim(number_format($number / $value, $precision), '0'), '.') . $suffix;
+            }
+        }
+
+        return $number;
+    }
+}
 // wallets
 function Wallets(){
   $wallets= [

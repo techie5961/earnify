@@ -175,7 +175,7 @@
             </div>
             {{-- body --}}
             <div class="w-full overflow-auto column">
-                @foreach (collect(json_decode(file_get_contents(database_path('data\nigeriabanks.json'))))->sortBy('name') as $data)
+                @foreach (collect(json_decode(file_get_contents(database_path('data/nigeriabanks.json'))))->sortBy('name') as $data)
                     <div x-on:click="
                     Bank = '{{ $data->name }}';
                     BankSelected = true;

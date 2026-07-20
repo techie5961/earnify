@@ -42,9 +42,7 @@
 
 {{-- vite js --}}
 @isset($vite_js)
-          <script defer src="{{ asset('vitecss/js/alpine.bundle.js') }}"></script>
-          <script src="{{ asset('vitecss/js/app.js?v='.config('versions.vite_version').'') }}"></script>    
-
+          <script src="{{ asset('vitecss/js/app.min.js?v='.config('versions.vite_version').'') }}"></script>    
 @endisset
 
 {{-- action loader --}}

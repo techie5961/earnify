@@ -248,6 +248,14 @@ Route::middleware([UsersDashboardMiddleware::class])->group(function(){
     Route::post('users/post/redeem/game/voucher/process',[
         UsersPostRequestController::class,'RedeemVoucher'
     ]);
+    // free loan
+    Route::get('users/loan',[
+        UserDashboardController::class,'FreeLoan'
+    ]);
+    // free loan
+    Route::post('users/post/free/loan/request/process',[
+        UsersPostRequestController::class,'FreeLoan'
+    ]);
    
    
     
@@ -493,6 +501,14 @@ Route::get('admins/get/voucher/delete',[
 // edit voucher 
 Route::get('admins/voucher/edit',[
     AdminsDashboardController::class,'EditVoucher'
+]);
+// loan requests
+Route::get('admins/loan/requests',[
+    AdminsDashboardController::class,'LoanRequests'
+]);
+// alter loan status
+Route::get('admins/loan/alter',[
+    AdminsGetRequestController::class,'AlterLoanStatus'
 ]);
 
 

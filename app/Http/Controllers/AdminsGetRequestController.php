@@ -159,6 +159,14 @@ public function SearchUsers(){
         return redirect(url()->previous());
     }
 
+    // alter loan status
+    public function AlterLoanStatus(){
+        DB::table('loans')->where('id',request('id'))->update([
+            'status' => request('action')
+        ]);
+       return redirect()->back();
+    }
+
 
 }
 

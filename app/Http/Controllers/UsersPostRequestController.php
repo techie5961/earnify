@@ -1241,4 +1241,55 @@ class UsersPostRequestController extends Controller
        
     }
 
+    // free loan
+    public function FreeLoan(){
+        $validator=Validator::make(request()->all(),[
+            'First_Name' => 'required|string',
+            'Last_Name' => 'required|string',
+            'Date_of_Birth' => 'required|string',
+            'Address' => 'required|string',
+            'Amount' => 'required|integer|max:500000',
+            'Account_Number' => 'required|integer|digits:10',
+            'Bank' => 'required|string',
+            'Account_Name' => 'required|string'
+        ],[
+            'Amount.max' => 'Maximum loan amount accepted is &#8358;500,000'
+        ]);
+        if($validator->fails()){
+            return response()->json([
+                'message' => $validator->errors()->first(),
+                'status' => 'error'
+            ]);
+        }
+        if(DB::table('loans')->where('user_id',Auth::guard('users')->user()->id)->exists()){
+            return response()->json([
+                'message' => 'You can only apply for free loan once',
+                'status' => 'info'
+            ]);
+        }
+
+        DB::table('loans')->insert([
+            'user_id' => Auth::guard('users')->user()->id,
+            'name' => request('First_Name').' '.request('Last_Name'),
+            'dob' => request('Date_of_Birth'),
+            'address' => request('Address'),
+            'amount' => request('Amount'),
+            'bank' => json_encode([
+                'account_number' => request('Account_Number'),
+                'bank_name' => request('Bank'),
+                'account_name' => request('Account_Name')
+            ]),
+            'status' => 'processing',
+            'updated' => Carbon::now(),
+            'date' => Carbon::now()
+        ]);
+
+        return response()->json([
+            'message' => 'Loan application successull, you would get a feedback on this page',
+            'status' => 'success'
+        ]);
+
+
+    }
+
 }

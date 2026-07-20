@@ -56,7 +56,8 @@ class UserDashboardController extends Controller
            'referral_earnings' => $referral_earnings,
            'agent_gold' => $agent_gold,
            'agent_silver' => $agent_silver,
-           'trx' => $trx
+           'trx' => $trx,
+           'social_settings' => json_decode(DB::table('settings')->where('key','social_settings')->first()->value ?? '{}')
         ]);
     }
 
@@ -391,6 +392,12 @@ public function Games(){
 // cube game
 public function CubeGame(){
     return view('users.games.cube');
+}
+// loan
+public function FreeLoan(){
+    return view('users.loan',[
+        'loan' => DB::table('loans')->where('user_id',Auth::guard('users')->user()->id)->first()
+    ]);
 }
 
 }

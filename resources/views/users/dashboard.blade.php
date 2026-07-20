@@ -229,8 +229,8 @@
         <div style="display:grid;grid-template-columns:repeat(4,1fr);" class="w-full row g-10 space-between flex-wrap">
             {{-- new column --}}
             <div x-data="{ 
-                'link' : '{{ url('users/free/loan') }}'
-             }" x-on:click="CreateNotify('info','You are not yet qualified to apply for a free loan')"  class="column align-center text-center g-5">
+                'link' : '{{ url('users/loan') }}'
+             }" x-on:click="Vitecss.navigate(link)"  class="column align-center text-center g-5">
                 <div class="h-50 no-shrink w-fit perfect-square g-10 column align-center justify-center br-10 bg-primary primary-text">
                     <svg viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M22.0049 5.99979H15.0049C11.6912 5.99979 9.00488 8.68608 9.00488 11.9998C9.00488 15.3135 11.6912 17.9998 15.0049 17.9998H22.0049V19.9998C22.0049 20.5521 21.5572 20.9998 21.0049 20.9998H3.00488C2.4526 20.9998 2.00488 20.5521 2.00488 19.9998V3.99979C2.00488 3.4475 2.4526 2.99979 3.00488 2.99979H21.0049C21.5572 2.99979 22.0049 3.4475 22.0049 3.99979V5.99979ZM15.0049 7.99979H23.0049V15.9998H15.0049C12.7957 15.9998 11.0049 14.2089 11.0049 11.9998C11.0049 9.79065 12.7957 7.99979 15.0049 7.99979ZM15.0049 10.9998V12.9998H18.0049V10.9998H15.0049Z"></path></svg>
 
@@ -282,6 +282,20 @@
                     <svg viewBox="0 0 24 24" fill="CurrentColor" xmlns="http://www.w3.org/2000/svg" height="20" width="20"><path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z"></path></svg>
 
                 </div>
+            </div>
+        </div>
+        {{-- new column --}}
+        <div class="column g-10px border-width-1px border-style-solid border-color-rgt-01 bg-light br-10px p-20px">
+            <strong class="font-size-1rem font-weight-900">Join Our Communities</strong>
+            <span class="opacity-07">Join our official communities on whatsapp and telegram to connect with other users and get latest updates.</span>
+            {{-- new row --}}
+            <div class="row align-center g-10px">
+                <button x-on:click="window.open('{{ $social_settings->whatsapp_community }}');" class="bg-whatsapp w-full p-10px br-10px font-weight-900 no-border c-white no-select pointer">
+                    Join Whatsapp
+                </button>
+                <button  x-on:click="window.open('{{ $social_settings->telegram_community }}');" class="bg-telegram w-full p-10px br-10px font-weight-900 no-border c-white no-select pointer">
+                    Join Telegram
+                </button>
             </div>
         </div>
        @if (!$trx->isEmpty())

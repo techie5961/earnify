@@ -529,4 +529,19 @@ public function EditVoucher(){
     ]);
 }
 
+// loan requests
+public function LoanRequests(){
+    $loans=DB::table('loans')->orderBy('date','desc')->paginate(10);
+    $loans->getCollection()->transform(function ($each) {
+            $each->user=DB::table('users')->where('id',$each->user_id)->first();
+            return $each;
+    });
+    return view('admins.loans',[
+        'total' => DB::table('loans')->count(),
+        'pending' => DB::table('loans')->where('status','processing')->count(),
+        'approved' => DB::table('loans')->where('status','approved')->count(),
+        'loans' => $loans
+    ]);
+}
+
 }
